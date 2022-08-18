@@ -1,0 +1,58 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.ideas {
+  @include flex($direction: column);
+  @include landingSection($mb: 75px);
+
+  .title {
+    @include title();
+  }
+
+  .description {
+    @include description();
+  }
+
+  .content {
+    padding-bottom: 73px;
+    @include flex($align: flex-start);
+
+    .info {
+      margin-top: 14px;
+      margin-left: 35px;
+      font-size: 24px;
+      line-height: 30px;
+      p + p {
+        margin-top: 28px;
+      }
+    }
+  }
+
+  .seeAll {
+    font-size: 24px;
+    line-height: 28.8px;
+    @include flex();
+
+    .arrow {
+      width: 15px;
+      height: 14px;
+      border-top: 3px solid #151A1E;
+      border-right: 3px solid #151A1E;
+
+      position: relative;
+
+      .shaft {
+        position: absolute;
+        height: 15px;
+        border-right: 3px solid #151A1E;
+        top: -3.8px;
+        right: 3.2px;
+        transform: rotate(45deg);
+      }
+    }
+
+    p + .arrow {
+      margin-left: 7.31px;
+    }
+  }
+}

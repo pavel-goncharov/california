@@ -1,0 +1,19 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.bestAround {
+  @include flex($direction: column);
+  @include landingSection($mb: 75px);
+
+  .title {
+    @include title();
+  }
+
+  .description {
+    @include description();
+  }
+
+  .items {
+    @include flex();
+  }
+}

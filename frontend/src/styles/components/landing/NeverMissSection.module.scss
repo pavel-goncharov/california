@@ -1,0 +1,50 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.neverMiss {
+  padding: 47px 0 43px 0;
+  margin: 0 252px 19px 253px;
+  border-radius: 16px;
+  background-color: #DCE5E2;
+  @include flex($direction: column);
+  @include landingSection();
+
+  .title {
+    @include title();
+  }
+
+  .description {
+    @include description($fs: 16px, $mb: 0px);
+  }
+
+  img{
+    display: block;
+    margin: 14px 0;
+  }
+
+  .search {
+    @include flex();
+
+    input[type=text] {
+      width: 285px;
+      height: 50px;
+      padding-left: 32px;
+      font-size: 14px;
+      border-right: none;
+      outline: none;
+      border-radius: 54px 0 0 54px;
+      background-color: #DCE5E2;
+    }
+  
+    button {
+      width: 115px;
+      height: 50px;
+      font-size: 14px;
+      border: none;
+      border-radius: 0 200px 200px 0;
+      background-color: #000;
+      color: #fff;
+      @include flex();
+    }
+  }
+}

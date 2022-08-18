@@ -1,0 +1,14 @@
+@import 'src/styles/reset.module.scss';
+@import 'src/styles/font.module.scss';
+
+$backgroundColor: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $backgroundColor;
+  overflow-x: hidden;
+}

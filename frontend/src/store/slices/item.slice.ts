@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {SliceNames} from '../../constants/slices';
-import {IItem} from '../../types/item.types';
-import {fetchAllItems} from '../thunks/item.thunk';
+import {SliceNames} from 'src/constants/slices';
+import {fetchAllItems} from 'src/store/thunks/item.thunk';
+import {IItem} from 'src/types/landing.types';
 
 interface IItemState {
   items: IItem[];

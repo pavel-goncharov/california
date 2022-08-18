@@ -1,30 +1,25 @@
-import {FC, useEffect} from 'react';
-import {Alert} from '@mui/material';
-import {useAppDispatch} from '../hooks/useAppDispatch';
-import {useAppSelector} from '../hooks/useAppSelector';
-import {fetchAllItems} from '../store/thunks/item.thunk';
+import {FC} from 'react';
+import SliderSection from 'src/components/landing/SliderSection';
+import CategoriesSection from 'src/components/landing/CategoriesSection';
+import MostSelledSection from 'src/components/landing/MostSelledSection';
+import BestAroundSection from 'src/components/landing/BestAroundSection';
+import IdeasSection from 'src/components/landing/IdeasSection';
+import AnythingElseSection from 'src/components/landing/AnythingElseSection';
+import NeverMissSection from 'src/components/landing/NeverMissSection';
+import Footer from 'src/components/landing/Footer';
+import classes from 'src/styles/pages/Landing.module.scss';
 
 const Landing: FC = () => {
-  const dispatch = useAppDispatch();
-
-  const items = useAppSelector(state => state.item.items);
-
-  useEffect(() => {
-    dispatch(fetchAllItems());
-  }, []);
-
   return (
-    <div>
-      <div>Landing</div>
-      <Alert severity="success" style={{color: "red"}}>This is a success alert — check it out!</Alert>
-      {items.map(item => 
-        <div key={item._id} style={{margin:'10px', border: '2px solid black'}}>
-          <div>{item.image}</div>
-          <div>{item.title}</div>
-          <div>{item.description}</div>
-          <div>{item.cost}</div>
-        </div>
-      )}
+    <div className={classes.landing}>
+      <SliderSection/>
+      <CategoriesSection/>
+      <MostSelledSection/>
+      <BestAroundSection/>
+      <IdeasSection/>
+      <AnythingElseSection/>
+      <NeverMissSection/>
+      <Footer/>
     </div>
   );
 };

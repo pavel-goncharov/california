@@ -1,6 +1,6 @@
-import {useAppDispatch} from './useAppDispatch';
 import {bindActionCreators} from '@reduxjs/toolkit';
-import Slices from '../store/slices';
+import {useAppDispatch} from 'src/hooks/useAppDispatch';
+import Slices from 'src/store/slices';
 
 export const useActions = () => {
   const dispatch = useAppDispatch();

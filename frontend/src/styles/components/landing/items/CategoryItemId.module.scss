@@ -1,0 +1,79 @@
+@import 'src/styles/mixins/flex.module.scss';
+
+#itemLaptop {
+  width: 639px;
+  height: 472px;
+  padding: 0 42px;
+  margin-bottom: 72px;
+  div {
+    @include flex($direction: column, $align: flex-end);
+    p {
+      line-height: 19.2px;
+      width: 60px;
+      height: 20px;
+      z-index: 2;
+      position: relative;
+      top: -5.5px;
+    }
+    span {
+      position: relative;
+      top: -5.5px;
+      width: 192px;
+      height: 77px;
+      line-height: 38.4px;
+      text-align: right;
+    }
+  }
+}
+
+#itemWatch {
+  width: 639px;
+  height: 270px;
+  padding: 0 42px;
+  @include flex($justify: flex-start);
+
+  div {
+    padding-left: 46px;
+    @include flex($direction: column, $align: flex-end);
+    text-align: right;
+    span {
+      width: 128px;
+    }
+  }
+}
+
+#itemPhone {  
+  width: 312px;
+  height: 792px;
+  margin: 0 16px;
+  @include flex($direction: column);
+  
+  img {
+    margin-bottom: 41px;
+    position: relative;
+    left: 8px;
+  }    
+
+  div {
+    @include flex($direction: column);
+    span {
+      padding: 0 31px;
+      text-align: center;
+    }
+  }
+}
+
+#itemTablet {
+  width: 312px;
+  height: 792px;
+  @include flex($direction: column-reverse);
+
+  div {
+    padding-bottom: 42px;
+    @include flex($direction: column);
+    span {
+      width: 233px;
+      text-align: center;
+    }
+  }
+}

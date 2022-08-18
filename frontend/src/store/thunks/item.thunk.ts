@@ -1,6 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {$host, ItemRoutes, ItemThunkPrefixes} from "../../constants/api";
-import {IItem} from "../../types/item.types";
+import {$host, ItemRoutes, ItemThunkPrefixes} from "src/constants/api";
+import {IItem} from "src/types/landing.types";
 
 export const fetchAllItems = createAsyncThunk(
   ItemThunkPrefixes.FETCH,

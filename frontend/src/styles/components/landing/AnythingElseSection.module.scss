@@ -1,0 +1,49 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.anythingElse {
+  @include flex($direction: column);
+  @include landingSection($mb: 64.5px);
+  
+  .title {
+    @include title($fs: 42px, $mb: 0px);
+  }
+
+  .inputBox {
+    position: relative;
+    margin: 24px 0 14.5px;
+
+    input[type=text] {
+      width: 650px;
+      height: 60px;
+      padding-left: 67px;
+      font-size: 14px;
+      border: 1px solid #C5C5C5;
+      border-radius: 100px;
+      background-color: #F8F9FA;
+    }
+
+    img {
+      position: absolute;
+      top: 15px;
+      left: 17px;
+      width: 30px;
+      height: 29px;
+    }
+  }
+
+  .tags {
+    width: 660px;
+    @include flex($wrap: wrap);
+    
+    .tag {
+      font-size: 14px;
+      border: 1px solid #C5C5C5;
+      padding: 12px 22px;
+      border-radius: 200px;
+      text-align: center;
+      background-color: #fff;
+      margin: 3.5px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import 'src/styles/mixins/flex.module.scss';
+
+.footer {
+  padding: 29px 73px 78px;
+  border-top: 1px solid #DCE5E2;
+  background-color: #F8F9FA;
+  @include flex($justify: space-between, $align: flex-start);
+
+  .logo {
+    width: 394px;
+    .description {
+      width: 304px;
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+  }
+
+  .linksBox {
+    width: 900px;
+    .links {
+      @include flex($justify: space-between, $align: flex-start);
+
+      .link {
+        font-size: 22px;
+        line-height: 27.5px;
+        margin-bottom: 19px;
+        font-family: 'Readex Pro Medium';
+      } 
+
+      .subLink {
+        font-size: 17px;
+        line-height: 21.6px;
+
+        & + .subLink {
+          margin-top: 14px;
+        }
+      }
+    }  
+  }
+}

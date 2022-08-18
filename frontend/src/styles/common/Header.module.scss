@@ -1,0 +1,48 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/arrow.module.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding: 0 73px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #000;
+  z-index: 1;
+  @include flex();
+  
+  & + * {
+    margin-top: calc(80px + 28px);
+  }
+
+  .navLinks {
+    width: 1014px;
+    height: 100%;
+    padding: 0 285px;
+    text-transform: uppercase;
+    @include flex($justify: space-between);
+
+    
+    .navLink {
+      @include flex();
+
+      .arrow {
+        margin-left: 4px;
+        @include arrow();
+      }
+    }
+  }
+
+  .buttons {
+    width: 110px;
+    height: 40px;
+    @include flex();
+    
+    img + img {
+      margin-left: 24px;
+    }
+  }
+}

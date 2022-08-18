@@ -14,7 +14,10 @@ function getCSSLoaders(extra) {
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.tsx'),
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      src: path.resolve(__dirname, '../src'),
+    }
   },
   module: {
     rules: [
@@ -25,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: getCSSLoaders('sass-loader'),
+        use: getCSSLoaders('sass-loader')
       },
       {
         test: /\.css$/,

@@ -1,0 +1,37 @@
+@import 'src/styles/mixins/flex.module.scss';
+
+.item {
+  width: 302.5px;
+  height: 396px;
+
+  & + .item {
+    margin-left: 28px;
+  }
+
+  .imgBox {
+    width: 303px;
+    height: 270px;
+    @include flex();
+  }
+  
+  .title {
+    font-size: 22px;
+    height: 28px;
+    line-height: 27.5px;
+    font-family: 'Readex Pro Medium';
+    margin-bottom: 9px;
+  }
+
+  .description {
+    width: 261px;
+    height: 51px;
+    font-size: 14px;
+    line-height: 16.8px;
+    margin-bottom: 8px;
+  }
+
+  .cost {
+    height: 22px;
+    font-size: 18px;
+  }
+}

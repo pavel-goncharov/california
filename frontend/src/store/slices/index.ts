@@ -1,4 +1,4 @@
-import itemSlice from './item.slice';
+import itemSlice from 'src/store/slices/item.slice';
 
 const Slices = {
   ...itemSlice.actions,

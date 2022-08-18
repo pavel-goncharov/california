@@ -1,0 +1,15 @@
+@mixin landingSection($mt: 28px, $mr: 73px, $mb: 28px, $ml: 73px) {
+  margin: $mt $mr $mb $ml;
+}
+
+@mixin title($fs: 42px, $mb: 9px) {
+  font-size: $fs;
+  margin-bottom: $mb;
+  font-family: 'Readex Pro Medium';
+}
+
+@mixin description($fs: 13px, $mb: 56px) {
+  font-size: $fs;
+  margin-bottom: $mb;
+  font-family: 'Readex Pro Light';
+}

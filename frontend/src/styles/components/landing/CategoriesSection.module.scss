@@ -1,0 +1,25 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.categories {
+  @include landingSection($mb: 78px);
+  @include flex($direction: column);
+
+  .title {
+    @include title();
+  }
+
+  .subtitle {
+    width: 628px;
+    @include description($fs: 14px, $mb: 55px);
+  }
+
+  .items {
+    @include flex($align: flex-start);
+    // .itemsOne {}
+  
+    .itemsTwo {
+      @include flex();
+    }
+  }
+}

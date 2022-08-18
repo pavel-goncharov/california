@@ -1,0 +1,19 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.mostSelected {
+  @include flex($direction: column);
+  @include landingSection($mb: 74px);
+
+  .title {
+    @include title();
+  }
+
+  .description {
+    @include description($mb: 31px);
+  }
+
+  .items {
+    @include flex();
+  }
+}
