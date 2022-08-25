@@ -11,10 +11,7 @@ const Header: FC = () => {
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <Burger onClick={() => {
-          setIsShowNavLinks(!isShowNavLinks);
-          console.log(isDesktop, isShowNavLinks, classNavLinks);
-        }}/>
+        <Burger onClick={() => setIsShowNavLinks(!isShowNavLinks)}/>
         <img src={headerSvgs.title.src} alt={headerSvgs.title.alt}/>
       </div>
       <ul className={classNavLinks}>

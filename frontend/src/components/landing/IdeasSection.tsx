@@ -11,8 +11,8 @@ const Ideas: FC = () => {
       <div className={classes.content}>
         <img src={ideasSection.img.src} alt={ideasSection.img.alt}/>
         <div className={classes.info}>
-          {ideasSection.infoParagraphs.map(paragraph => 
-            <p>{paragraph}</p>
+          {ideasSection.infoParagraphs.map((paragraph, index) => 
+            <p key={index}>{paragraph}</p>
           )}
         </div>
       </div>

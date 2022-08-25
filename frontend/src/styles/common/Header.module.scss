@@ -14,22 +14,12 @@
   z-index: 1;
   @include flex();
 
-  @media (max-width: 900px) {
-    @include flex($justify: space-between);
-    padding: 0 20px;
-  }
-  
   & + * {
     margin-top: calc(80px + 28px);
   }
 
   .logo {
     @include flex();
-    @media (max-width: 345px) {
-      img {
-        width: 130px;
-      }
-    }
   }
 
   .navLinks {
@@ -37,28 +27,11 @@
     text-transform: uppercase;
     @include flex();
 
-    @media (max-width: 900px) {
-      position: absolute;
-      top: 80px;
-      left: 0px;
-      width: 150px;
-      height: calc(100vh - 80px);
-      padding: 20px;
-      background-color: #fff;
-      opacity: 0.9;
-      transition: 1s opacity;
-      @include flex($direction: column, $align: flex-start, $justify: flex-start);
-    }
-
     .navLink {
       @include flex();
 
       & + .navLink {
         margin-left: 38.5px;
-        @media (max-width: 900px) {
-          margin-left: 0px;
-          padding-top: 15px;
-        }
       }
 
       .arrow {
@@ -72,24 +45,59 @@
     width: 110px;
     height: 40px;
     @include flex();
-    @media (max-width: 400px) {
-      width: 58px;
-    }
     
     img + img {
       margin-left: 24px;
-      @media (max-width: 400px) {
-        margin-left: 10px;
-      }
     }
   }
 }
 
 .hidden {
   opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
-.show {
-  visibility: visible;
+@media screen and (max-width: 900px) {
+  .header {
+    @include flex($justify: space-between);
+    padding: 0 20px;
+
+    .navLinks {
+      position: absolute;
+      top: 80px;
+      left: 0px;
+      width: 150px;
+      height: calc(100vh - 80px);
+      padding: 20px;
+      background-color: #fff;
+      opacity: 0.9;
+      transition: 1s opacity;
+      @include flex($direction: column, $align: flex-start, $justify: flex-start);
+  
+      .navLink {
+        & + .navLink {
+          margin-left: 0px;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    .logo {
+      img {
+        width: 130px;
+      }
+    }
+
+    .buttons {
+      width: 58px;
+      
+      img + img {
+        margin-left: 10px;
+      }
+    }
+  }
 }

@@ -1,5 +1,9 @@
 @mixin landingSection($mt: 28px, $mr: 73px, $mb: 28px, $ml: 73px) {
   margin: $mt $mr $mb $ml;
+
+  @media screen and (max-width: 900px) {
+    margin: $mt 20px $mb 20px;
+  }  
 }
 
 @mixin title($fs: 42px, $mb: 9px) {
