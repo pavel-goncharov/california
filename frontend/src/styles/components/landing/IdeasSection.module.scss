@@ -14,14 +14,25 @@
   }
 
   .content {
+    width: calc(100vw - 146px);
+    height: 420px;
     padding-bottom: 73px;
     @include flex($align: flex-start);
 
+    img {
+      width: 620px;
+      height: 100%;
+    }
+
     .info {
-      margin-top: 14px;
+      height: 100%;
+      padding-top: 14px;
       margin-left: 35px;
       font-size: 24px;
       line-height: 30px;
+      p {
+        width: auto;
+      }
       p + p {
         margin-top: 28px;
       }
@@ -53,6 +64,41 @@
 
     p + .arrow {
       margin-left: 7.31px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .ideas {
+    .content {
+      @include flex($wrap: wrap);
+      height: auto;
+      padding-bottom: 40px;
+
+      img {
+        width: 100%;
+        min-width: 280px;
+        height: auto;
+      }
+  
+      .info {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px 10px;
+        margin-left: 0px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ideas {
+    .content {
+      width: calc(100vw - 40px);
+      .info {
+        font-size: 20px;
+      }
     }
   }
 }
