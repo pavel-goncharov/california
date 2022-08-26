@@ -2,12 +2,14 @@
 @import 'src/styles/mixins/landingSection.module.scss';
 
 .neverMiss {
+  width: 935px;
+  height: 450px;
   padding: 47px 0 43px 0;
-  margin: 0 252px 19px 253px;
+  margin: 0;
+  margin: 0 auto 19px;
   border-radius: 16px;
   background-color: #DCE5E2;
   @include flex($direction: column);
-  @include landingSection();
 
   .title {
     @include title();
@@ -45,6 +47,34 @@
       background-color: #000;
       color: #fff;
       @include flex();
+    }
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .neverMiss {
+    width: calc(100vw - 146px);
+    height: auto;
+    padding: 47px 20px 43px 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .neverMiss {
+    width: calc(100vw - 40px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .neverMiss {
+    .search {
+      input[type=text] {
+        width: 170px; 
+      }
+      
+      button {
+        width: 70px;
+      }
     }
   }
 }
