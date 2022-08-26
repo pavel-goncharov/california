@@ -4,14 +4,15 @@
   width: 302.5px;
   height: 396px;
 
-  & + .item {
-    margin-left: 28px;
-  }
-
   .imgBox {
-    width: 303px;
+    width: 100%;
     height: 270px;
     @include flex();
+    img {
+      max-width: 90%;
+      height: auto;
+      max-height: 100%;
+    }
   }
   
   .title {
@@ -33,5 +34,11 @@
   .cost {
     height: 22px;
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .item {
+    width: 280px;   
   }
 }
