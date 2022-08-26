@@ -47,3 +47,21 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .anythingElse {
+    width: calc(100vw - 40px);
+    
+    .inputBox {
+      width: 100%;
+
+      input[type=text] {
+        width: 100%;
+      }
+    }
+
+    .tags {
+      width: 98.485%;
+    }
+  }
+}
