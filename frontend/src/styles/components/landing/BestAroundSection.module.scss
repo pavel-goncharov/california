@@ -15,5 +15,25 @@
 
   .items {
     @include flex();
+    max-width: calc(100vw - 146px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(413px, max-content));
+    gap: 28px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bestAround {
+    .items {
+      max-width: calc(100vw - 40px);
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .bestAround {
+    .items {
+      grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+    }
   }
 }

@@ -7,10 +7,6 @@
   background-color: #F8F9FA;
   @include flex($direction: column);
 
-  & + .item {
-    margin-left: 28px;
-  }
-
   .tag {
     height: 17px;
     line-height: 16.8px;
@@ -35,5 +31,18 @@
     padding: 14px 63px;
     border-radius: 200px;
     font-size: 18px;
+  }
+
+  img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .item {
+    width: 280px;
+    height: auto;
+    padding: 15px 0;
   }
 }
