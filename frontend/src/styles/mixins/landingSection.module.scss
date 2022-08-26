@@ -10,6 +10,7 @@
   font-size: $fs;
   margin-bottom: $mb;
   font-family: 'Readex Pro Medium';
+  text-align: center;
 }
 
 @mixin description($fs: 13px, $mb: 56px) {
