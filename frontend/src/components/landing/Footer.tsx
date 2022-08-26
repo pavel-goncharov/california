@@ -10,20 +10,18 @@ const Footer: FC = () => {
         <img src={logo.src} alt={logo.alt}/>
         <p className={classes.description}>{description}</p>
       </div>
-      <div className={classes.linksBox}>
-        <ul className={classes.links}>
-          {Object.keys(links).map(link => 
-            <li key={link}>
-              <p className={classes.link}>{link}</p>
-              <ul>
-                {links[link].map((subLink: string) =>
-                  <li className={classes.subLink} key={subLink}>{subLink}</li>
-                )}
-              </ul>
-          </li>
-          )}
-        </ul>
-      </div>
+      <ul className={classes.links}>
+        {Object.keys(links).map(link => 
+          <li className={classes.linkGroup} key={link}>
+            <p className={classes.titleLink}>{link}</p>
+            <ul>
+              {links[link].map((subLink: string) =>
+                <li className={classes.titleSubLink} key={subLink}>{subLink}</li>
+              )}
+            </ul>
+        </li>
+        )}
+      </ul>
     </footer>
   );
 };
