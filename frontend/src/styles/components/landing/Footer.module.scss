@@ -4,10 +4,14 @@
   padding: 29px 73px 78px;
   border-top: 1px solid #DCE5E2;
   background-color: #F8F9FA;
-  @include flex($justify: space-between, $align: flex-start);
+  display: grid;
+  grid-template-columns: 394px auto;
+  gap: 28px;
 
   .logo {
     width: 394px;
+    margin-right: 28px;
+
     .description {
       width: 304px;
       margin-top: 18px;
@@ -16,26 +20,60 @@
     }
   }
 
-  .linksBox {
-    width: 900px;
-    .links {
-      @include flex($justify: space-between, $align: flex-start);
+  .links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(197px, max-content));
+    gap: 28px;
 
-      .link {
+    .linkGroup {
+      width: 197px;
+      height: 191px;
+
+      .titleLink {
         font-size: 22px;
         line-height: 27.5px;
         margin-bottom: 19px;
         font-family: 'Readex Pro Medium';
       } 
-
-      .subLink {
+  
+      .titleSubLink {
         font-size: 17px;
         line-height: 21.6px;
-
-        & + .subLink {
+  
+        & + .titleSubLink {
           margin-top: 14px;
         }
       }
-    }  
+    }
+  }  
+}
+
+@media screen and (max-width: 990px) {
+  .footer {
+    display: block;
+
+    .logo {
+      margin-right: 0px;
+      margin-bottom: 28px;
+    }
+
+    .links {
+      .linkGroup {
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 29px 20px 78px;
+
+    .logo {
+      width: 280px;  
+      .description {
+        width: 100%;
+      }
+    }
   }
 }

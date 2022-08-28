@@ -13,21 +13,26 @@
   color: #000;
   z-index: 1;
   @include flex();
-  
+
   & + * {
     margin-top: calc(80px + 28px);
   }
 
-  .navLinks {
-    width: 1014px;
-    height: 100%;
-    padding: 0 285px;
-    text-transform: uppercase;
-    @include flex($justify: space-between);
+  .logo {
+    @include flex();
+  }
 
-    
+  .navLinks {
+    width: calc(100% - (170px + 110px));
+    text-transform: uppercase;
+    @include flex();
+
     .navLink {
       @include flex();
+
+      & + .navLink {
+        margin-left: 38.5px;
+      }
 
       .arrow {
         margin-left: 4px;
@@ -43,6 +48,56 @@
     
     img + img {
       margin-left: 24px;
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    @include flex($justify: space-between);
+    padding: 0 20px;
+
+    .navLinks {
+      position: absolute;
+      top: 80px;
+      left: 0px;
+      width: 150px;
+      height: calc(100vh - 80px);
+      padding: 20px;
+      background-color: #fff;
+      opacity: 0.9;
+      transition: 1s opacity;
+      @include flex($direction: column, $align: flex-start, $justify: flex-start);
+  
+      .navLink {
+        & + .navLink {
+          margin-left: 0px;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    .logo {
+      img {
+        width: 130px;
+      }
+    }
+
+    .buttons {
+      width: 58px;
+      
+      img + img {
+        margin-left: 10px;
+      }
     }
   }
 }

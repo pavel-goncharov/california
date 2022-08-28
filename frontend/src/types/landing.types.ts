@@ -26,16 +26,10 @@ export interface ISlideItem extends ISectionHead {
 
 export interface ICategoryItem extends ISlideItem { 
   idCSS: string;
-  group: number;
 };
 
 export interface ICategorySection extends ISectionHead {
   items: ICategoryItem[];
-};
-
-export type TSortByGroup = {
-  firstGroup: ICategoryItem[];
-  secondGroup: ICategoryItem[];
 };
 
 export interface IMostSelledSection extends ISectionHead {};

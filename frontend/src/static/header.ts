@@ -19,4 +19,4 @@ export const headerSvgs: IImgCollection = {
 };
 
 export const navLinks: string[] = ['all products', 'solutions', 'about', 'support'];
-export const navLinkWithArrow: string = 'solutions';
+export const activeNavLink: string = 'solutions';
