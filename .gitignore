@@ -1,5 +1,4 @@
 node_modules
 build
-README.md
 /frontend/src/constants/config.ts
 /backend/src/constants/config.ts
