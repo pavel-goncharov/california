@@ -1,5 +1,6 @@
 @import 'src/styles/mixins/flex.module.scss';
 @import 'src/styles/mixins/landingSection.module.scss';
+@import 'src/styles/mixins/grid.module.scss';
 
 .mostSelected {
   @include flex($direction: column);
@@ -15,9 +16,7 @@
 
   .items {
     max-width: calc(100vw - 146px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(302.5px, max-content));
-    gap: 28px;
+    @include grid($col: 302.5px, $gap: 28px);
   }
 }
 

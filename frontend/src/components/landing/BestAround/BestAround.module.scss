@@ -1,5 +1,6 @@
 @import 'src/styles/mixins/flex.module.scss';
 @import 'src/styles/mixins/landingSection.module.scss';
+@import 'src/styles/mixins/grid.module.scss';
 
 .bestAround {
   @include flex($direction: column);
@@ -14,26 +15,15 @@
   }
 
   .items {
-    @include flex();
-    max-width: calc(100vw - 146px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(413px, max-content));
-    gap: 27.5px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .bestAround {
-    .items {
-      max-width: calc(100vw - 40px);
-    }
+    width: 100%;
+    @include grid($col: 413px, $gap: 27.5px);
   }
 }
 
 @media screen and (max-width: 460px) {
   .bestAround {
     .items {
-      grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+      @include gridCol($col: 280px);
     }
   }
 }

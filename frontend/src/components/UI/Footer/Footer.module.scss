@@ -1,13 +1,12 @@
 @import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/grid.module.scss';
 
 .footer {
   padding: 29px 73px 78px;
   border-top: 1px solid #DCE5E2;
   background-color: #F8F9FA;
-  display: grid;
-  grid-template-columns: 394px auto;
-  gap: 28px;
-
+  @include grid($isRepeat: false, $col: 394px auto, $gap: 28px);
+  
   .logo {
     width: 394px;
     margin-right: 28px;
@@ -21,10 +20,8 @@
   }
 
   .links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(197px, max-content));
-    gap: 28px;
-
+    @include grid($col: 197px, $gap: 28px);
+    
     .linkGroup {
       width: 197px;
       height: 191px;

@@ -1,0 +1,18 @@
+@mixin grid($isRepeat: true, $col: none, $gap: 0) {
+  display: grid;
+  @include gridCol($isRepeat, $col);
+  grid-gap: $gap;
+}
+
+@mixin gridCol($isRepeat: true, $col: none) {
+  @if $isRepeat {
+    grid-template-columns: repeat(auto-fit, minmax($col, max-content));
+  } @else {
+    grid-template-columns: $col;
+  }
+}
+
+@mixin gridPosItem($col: auto, $col2: auto, $row: auto, $row2: auto) {
+  grid-column: #{$col}/#{$col2};
+  grid-row: #{$row}/#{$row2};
+}

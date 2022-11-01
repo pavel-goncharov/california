@@ -1,5 +1,6 @@
 @import 'src/styles/mixins/flex.module.scss';
 @import 'src/styles/mixins/landingSection.module.scss';
+@import 'src/styles/mixins/grid.module.scss';
 
 .categories {
   @include landingSection($mb: 78px);
@@ -16,17 +17,14 @@
 
   .items {
     width: 100%;
-    display: grid;
-    grid-gap: 72px 15.5px;
-    grid-template-columns: 639px 312px 312px;
+    @include grid($isRepeat: false, $col: 639px 312px 312px, $gap: 72px 15.5px);
   }
 }
 
 @media screen and (max-width: 1440px) {
   .categories {
     .items {
-      grid-template-columns: 61.089% 35.88%;
-      grid-gap: 32px;
+      @include grid($isRepeat: false, $col: 61.089% 35.88%, $gap: 32px);
     }
   }
 }
@@ -35,7 +33,7 @@
   .categories {
     .items {
       width: calc(100vw - 40px);
-      grid-template-columns: 100%;
+      @include gridCol($isRepeat: false, $col: 100%);
     }
   }
 }
