@@ -54,7 +54,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
       title: 'online-store',
-      favicon: path.resolve(__dirname, '../src/assets/favicon.png'),
+      favicon: path.resolve(__dirname, '../src/assets/img/favicon.png'),
     }),
   ],
   stats: 'errors-only',

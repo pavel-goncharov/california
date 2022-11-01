@@ -1,0 +1,49 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.categories {
+  @include landingSection($mb: 78px);
+  @include flex($direction: column);
+
+  .title {
+    @include title();
+  }
+
+  .subtitle {
+    max-width: 628px;
+    @include description($fs: 14px, $mb: 55px);
+  }
+
+  .items {
+    width: 100%;
+    display: grid;
+    grid-gap: 72px 15.5px;
+    grid-template-columns: 639px 312px 312px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .categories {
+    .items {
+      grid-template-columns: 61.089% 35.88%;
+      grid-gap: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .categories {
+    .items {
+      width: calc(100vw - 40px);
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .categories {
+    .items {
+      width: 280px;
+    }
+  }
+}

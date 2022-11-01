@@ -1,0 +1,39 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.bestAround {
+  @include flex($direction: column);
+  @include landingSection($mb: 75px);
+
+  .title {
+    @include title();
+  }
+
+  .description {
+    @include description();
+  }
+
+  .items {
+    @include flex();
+    max-width: calc(100vw - 146px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(413px, max-content));
+    gap: 27.5px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bestAround {
+    .items {
+      max-width: calc(100vw - 40px);
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .bestAround {
+    .items {
+      grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+    }
+  }
+}

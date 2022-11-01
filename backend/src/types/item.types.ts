@@ -1,4 +1,4 @@
-import {ObjectId} from "./common.types";
+import {ObjectId} from './common.types';
 
 type IItemType = {
   title: string;

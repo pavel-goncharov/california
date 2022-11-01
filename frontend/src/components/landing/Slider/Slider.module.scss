@@ -1,0 +1,186 @@
+@import 'src/styles/mixins/flex.module.scss';
+@import 'src/styles/mixins/arrow.module.scss';
+@import 'src/styles/mixins/landingSection.module.scss';
+
+.slider {
+  height: 550px;
+  padding: 0 56px;
+  border-radius: 32px;
+  background-color: #DCE5E2;
+  position: relative;
+  @include landingSection($mb: 75px);
+  @include flex($align: stretch);
+
+
+  .textBox {
+    width: 50%;
+    @include flex($direction: column, $align: flex-start);
+
+    .title {
+      @include title($fs: 58px, $mb: 19px);
+      text-align: left;
+    }
+
+    .description {
+      @include description($fs: 16px, $mb: 30px);
+    }
+
+    .btn {
+      width: 170px;
+      height: 50px;
+      border: 1px solid #000;
+      padding: 14px 53px;
+      border-radius: 32px;
+      font-size: 18px; 
+    }
+  }
+
+  .imageBox {
+    width: 50%;
+    height: 100%;
+    @include flex($align: flex-end);
+    img {
+      width: 100%;
+      height: auto;
+      min-height: 85%;
+      max-height: 100%;
+    }
+  }
+
+  .leftArrow {
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    @include arrow($width: 18px, $borderWidth: 2.6px, $color: #08090D, $deg: 135deg);
+  }
+
+  .rightArrow {
+    position: absolute;
+    right: 19px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    @include arrow($width: 18px, $borderWidth: 2.6px, $color: #08090D, $deg: -45deg);
+  }
+
+  .paginationBox {
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    bottom: 34px;
+    @include flex($justify: space-between);
+
+    .paginationItem {
+      width: 29.985%;
+      max-width: 29.985%;
+      height: 100%;
+      background-color: #000;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .slider {
+    height: 450px;
+    .textBox {
+      .title {
+        @include title($fs: 40px, $mb: 10px);
+      }
+  
+      .description {
+        @include description($fs: 14px, $mb: 20px);
+      }
+    }
+
+    .paginationBox {
+      bottom: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slider {
+    height: 400px;
+    .textBox {
+      .title {
+        @include title($fs: 35px, $mb: 10px);
+      }
+    }
+
+    .paginationBox {
+      bottom: 15px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 935px) {
+  .slider {
+    height: auto;
+    padding: 20px 25px 0px;
+    @include flex($direction: column);
+
+    .textBox {
+      width: 90%;
+      .btn {
+        margin: 0 auto 20px;
+      }
+    }
+
+    .imageBox {
+      width: 90%;
+      padding-bottom: 32px;
+    }
+
+    .paginationBox {
+      width: 70%;
+      bottom: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .slider {
+    padding: 10px 20px 0px;
+
+    .leftArrow {
+      left: 10px;
+      @include arrow($width: 12px, $borderWidth: 2.6px, $color: #08090D, $deg: 135deg);
+    }
+  
+    .rightArrow {
+      right: 10px;
+      @include arrow($width: 12px, $borderWidth: 2.6px, $color: #08090D, $deg: -45deg);
+    }
+
+
+    .textBox {
+      width: 95%;
+      .title {
+        font-size: 30px;
+      }
+      .btn {
+        width: auto;
+        height: auto;
+        padding: 10px 30px;
+        font-size: 14px; 
+      }
+    }
+
+    .imageBox {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .slider {
+    .textBox {
+      .title {
+        font-size: 25px;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import Landing from 'src/pages/Landing';
+import Landing from 'src/pages/Landing/Landing';
 
 export const publicRoutes = [
   {path: '/', element: Landing},
